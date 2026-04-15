@@ -1,0 +1,15 @@
+{
+  "name": "@feature-flags/sdk",
+  "version": "1.0.0",
+  "description": "JavaScript/TypeScript SDK for Feature Flags System",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "tsup": "^8.0.0"
+  }
+}

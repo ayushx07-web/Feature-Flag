@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: feature-flag-backend
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5433/featureflags?options=-c%20timezone=UTC
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6380
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:8bf2f7596b429074094a65c2b0e77d079ebcb8f9d3b1dd83a483e580e0c8bdf4}
+    expiration-ms: 900000       # 15 minutes
+    refresh-expiration-ms: 604800000  # 7 days
+  redis:
+    flag-cache-ttl-seconds: 30

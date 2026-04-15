@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-textMain antialiased selection:bg-primary/30;
+  }
+}
+
+@layer components {
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface rounded;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-md hover:bg-primary/50 transition-colors;
+  }
+}
